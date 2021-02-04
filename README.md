@@ -1,3 +1,17 @@
+## Install in NVIDIA GTX 3070
+1. Download and setup CUB
+2. update setup.py
+
+``` python
+    extra_compile_args = {"cxx": ["-std=c++14"],
+                          'nvcc':['--gpu-architecture=compute_80','--gpu-code=sm_80']
+                           }
+```
+3. set environment variable
+``` sh
+export TORCH_CUDA_ARCH_LIST="8.0"
+```
+
 <img src="https://raw.githubusercontent.com/facebookresearch/pytorch3d/master/.github/pytorch3dlogo.png" width="900"/>
 
 [![CircleCI](https://circleci.com/gh/facebookresearch/pytorch3d.svg?style=svg)](https://circleci.com/gh/facebookresearch/pytorch3d)
