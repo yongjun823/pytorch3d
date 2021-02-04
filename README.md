@@ -1,15 +1,30 @@
 ## Install in NVIDIA GTX 3070
-1. Download and setup CUB
-2. update setup.py
+1. Install requirements and Setup CUB
+reference : https://github.com/facebookresearch/pytorch3d/blob/master/INSTALL.md <br>
+Otherwise download the CUB library from https://github.com/NVIDIA/cub/releases and unpack it to a folder of your choice. Define the environment variable CUB_HOME before building and point it to the directory that contains CMakeLists.txt for CUB. For example on Linux/Mac,
+``` sh
+curl -LO https://github.com/NVIDIA/cub/archive/1.10.0.tar.gz
+tar xzf 1.10.0.tar.gz
+export CUB_HOME=$PWD/cub-1.10.0
+```
+2. Set environment variable
+``` sh
+export TORCH_CUDA_ARCH_LIST="8.0"
+```
+3. Download source code
+``` sh
+git clone https://github.com/yongjun823/pytorch3d && cd pytorch3d
+```
+4. Update setup.py
 
 ``` python
     extra_compile_args = {"cxx": ["-std=c++14"],
                           'nvcc':['--gpu-architecture=compute_80','--gpu-code=sm_80']
                            }
 ```
-3. set environment variable
-``` sh
-export TORCH_CUDA_ARCH_LIST="8.0"
+5. Install pytorch3d
+```
+pip3 install -e .
 ```
 
 <img src="https://raw.githubusercontent.com/facebookresearch/pytorch3d/master/.github/pytorch3dlogo.png" width="900"/>
