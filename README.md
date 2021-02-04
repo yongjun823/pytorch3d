@@ -1,4 +1,4 @@
-## Install in NVIDIA GTX 3070
+## Install in NVIDIA RTX 3070
 1. Install requirements and Setup CUB
 reference : https://github.com/facebookresearch/pytorch3d/blob/master/INSTALL.md <br>
 Otherwise download the CUB library from https://github.com/NVIDIA/cub/releases and unpack it to a folder of your choice. Define the environment variable CUB_HOME before building and point it to the directory that contains CMakeLists.txt for CUB. For example on Linux/Mac,
