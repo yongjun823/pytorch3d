@@ -37,7 +37,9 @@ def get_extensions():
     source_cuda = glob.glob(os.path.join(extensions_dir, "**", "*.cu"), recursive=True)
     extension = CppExtension
 
-    extra_compile_args = {"cxx": ["-std=c++14"]}
+    extra_compile_args = {"cxx": ["-std=c++14"],
+                          'nvcc':['--gpu-architecture=compute_80','--gpu-code=sm_80']
+                           }
     define_macros = []
     include_dirs = [extensions_dir]
 
