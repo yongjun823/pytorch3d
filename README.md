@@ -7,6 +7,12 @@ curl -LO https://github.com/NVIDIA/cub/archive/1.10.0.tar.gz
 tar xzf 1.10.0.tar.gz
 export CUB_HOME=$PWD/cub-1.10.0
 ```
+1.1 conda install
+```
+conda install -c conda-forge fvcore
+conda install -c iopath iopath
+```
+
 2. Set environment variable
 ``` sh
 export TORCH_CUDA_ARCH_LIST="8.0"
