@@ -33,6 +33,45 @@ git clone https://github.com/yongjun823/pytorch3d && cd pytorch3d
 pip3 install -e .
 ```
 
+## Install in NVIDIA docker nvcr.io/nvidia/pytorch:19.12-py3
+
+1. Create anaconda environment
+``` sh
+conda create -n pytorch3d python=3.8
+conda activate pytorch3d
+conda init bash
+source .bashrc 
+conda activate pytorch3d
+```
+
+2. Install anaconda package (CUDA 10.2 & torch 1.7)
+``` sh
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda install -c conda-forge fvcore 
+conda install -c iopath iopath
+conda install -c bottler nvidiacub
+```
+
+3. set CUB_HOME
+``` sh
+curl -LO https://github.com/NVIDIA/cub/archive/1.10.0.tar.gz
+tar xzf 1.10.0.tar.gz
+export CUB_HOME=$PWD/cub-1.10.0
+```
+
+4. Install Pytorch3d
+``` sh
+conda install pytorch3d -c pytorch3d
+pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
+```
+
+5. Install NVIDIA apex
+``` sh
+git clone https://github.com/NVIDIA/apex
+cd apex/
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+```
+
 <img src="https://raw.githubusercontent.com/facebookresearch/pytorch3d/master/.github/pytorch3dlogo.png" width="900"/>
 
 [![CircleCI](https://circleci.com/gh/facebookresearch/pytorch3d.svg?style=svg)](https://circleci.com/gh/facebookresearch/pytorch3d)
