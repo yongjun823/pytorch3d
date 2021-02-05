@@ -38,9 +38,8 @@ pip3 install -e .
 1. Create anaconda environment
 ``` sh
 conda create -n pytorch3d python=3.8
-conda activate pytorch3d
-conda init bash
 source .bashrc 
+conda init bash
 conda activate pytorch3d
 ```
 
