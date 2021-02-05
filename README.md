@@ -35,6 +35,12 @@ pip3 install -e .
 
 ## Install in NVIDIA docker nvcr.io/nvidia/pytorch:19.12-py3
 
+0. Update pip & apt
+```
+apt-get update
+pip install -U pip
+```
+
 1. Create anaconda environment
 ``` sh
 conda create -n pytorch3d python=3.8
@@ -60,7 +66,6 @@ export CUB_HOME=$PWD/cub-1.10.0
 
 4. Install Pytorch3d
 ``` sh
-conda install pytorch3d -c pytorch3d
 pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
 ```
 
