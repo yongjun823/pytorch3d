@@ -44,8 +44,8 @@ pip install -U pip
 1. Create anaconda environment
 ``` sh
 conda create -n pytorch3d python=3.8
-source .bashrc 
 conda init bash
+source ~/.bashrc 
 conda activate pytorch3d
 ```
 
