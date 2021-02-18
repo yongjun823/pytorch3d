@@ -38,6 +38,7 @@ pip3 install -e .
 0. Update pip & apt
 ```
 apt-get update
+apt install -y libusb-1.0-0 libgl1-mesa-glx
 pip install -U pip
 ```
 
